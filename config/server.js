@@ -14,8 +14,8 @@
 
 module.exports = {
   drawRoutes: function(app) {
-    // app.get('/api/greeting/:message', function(req, res){
-    //   res.json({ message: "OK, "+req.params.message });
-    // });
+    app.get(/.*/, function(req, res) {
+      res.sendfile('generated/index.html');
+    });
   }
 };
