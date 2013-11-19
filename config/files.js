@@ -17,7 +17,8 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('files', {
     vendor: [
       "vendor/js/jquery.js",
       "vendor/js/lodash.js",
-      "vendor/js/backbone.js"
+      "vendor/js/backbone.js",
+      "vendor/js/json_prefilter.js"
     ],
     app: [
       "app/js/app.js",
