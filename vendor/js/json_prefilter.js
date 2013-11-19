@@ -4,5 +4,6 @@ $(function() {
       options.headers = {};
     }
     options.headers['Accept'] = 'application/json';
+    return options;
   });
 });
