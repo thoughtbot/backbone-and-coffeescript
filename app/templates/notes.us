@@ -4,10 +4,10 @@
       <dl>
         <dt>Title</dt>
         <dd><a href="/notes/<%= note.id %>">
-          <%= note.title %>
+          <%= note.get('title') %>
         </a></dd>
         <dt>Content</dt>
-        <dd><%= note.content %></dd>
+        <dd><%= note.get('content') %></dd>
       </dl>
     </li>
   <% }) %>

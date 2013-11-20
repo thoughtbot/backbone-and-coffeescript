@@ -4,7 +4,7 @@ class App.Router extends Backbone.Router
     'notes/:id': 'showNote'
 
   index: ->
-    view = new App.Views.Notes(collection: [{title: 'First note', content: 'Note body'}])
+    view = new App.Views.Notes(collection: App.AllNotes)
     $('body').html(view.render().el)
 
   showNote: (id) ->
