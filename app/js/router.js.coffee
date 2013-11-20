@@ -1,7 +1,11 @@
 class App.Router extends Backbone.Router
   routes:
-    '': -> alert("You requested the index page")
+    '': 'index'
     'notes/:id': 'showNote'
+
+  index: ->
+    view = new App.Views.Notes()
+    $('body').html(view.render().el)
 
   showNote: (id) ->
     alert("You requested a note #{id}")
