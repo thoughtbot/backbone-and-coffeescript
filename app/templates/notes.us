@@ -1,6 +1,6 @@
 <ul>
   <% notes.forEach(function(note) { %>
-    <li>
+    <li class="note">
       <dl>
         <dt>Title</dt>
         <dd><a href="/notes/<%= note.id %>">
