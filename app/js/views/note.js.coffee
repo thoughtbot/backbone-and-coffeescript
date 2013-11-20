@@ -8,6 +8,12 @@ class App.Views.Note extends Backbone.View
     'change :input': 'saveModel'
     'click .remove-note': 'destroy'
 
+  initialize: ->
+      @listenTo(@model, 'invalid error', @markInvalid)
+
+  markInvalid: ->
+    @$el.addClass('invalid')
+
   render: =>
     @$el.html(@template(note: @model))
     this
