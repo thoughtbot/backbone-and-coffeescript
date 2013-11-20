@@ -1,0 +1,8 @@
+<dl>
+  <dt>Title</dt>
+  <dd><a href="/notes/<%= note.id %>">
+    <%= note.get('title') %>
+  </a></dd>
+  <dt>Content</dt>
+  <dd><%= note.get('content') %></dd>
+</dl>

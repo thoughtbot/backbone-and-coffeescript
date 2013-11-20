@@ -1,14 +1,2 @@
-<ul>
-  <% notes.forEach(function(note) { %>
-    <li class="note">
-      <dl>
-        <dt>Title</dt>
-        <dd><a href="/notes/<%= note.id %>">
-          <%= note.get('title') %>
-        </a></dd>
-        <dt>Content</dt>
-        <dd><%= note.get('content') %></dd>
-      </dl>
-    </li>
-  <% }) %>
+<ul class="notes">
 </ul>
