@@ -9,6 +9,10 @@ class App.Views.Note extends Backbone.View
 
   initialize: ->
     @listenTo(@model, 'destroy', @remove)
+    @listenTo(@model, 'invalid', @markInvalid)
+
+  markInvalid: ->
+    @$el.addClass('invalid')
 
   render: ->
     @$el.html(@template(note: @model))
