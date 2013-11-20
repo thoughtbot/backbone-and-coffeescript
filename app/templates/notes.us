@@ -1,16 +1,5 @@
 <h1>Notes Template</h1>
 
-<ul>
-  <% notes.forEach(function(note) { %>
-    <li>
-      <dl>
-        <dt>Title</dt>
-        <dd><a href="/notes/<%= note.id %>">
-          <%= note.get('title') %>
-        </a></dd>
-        <dt>Content</dt>
-        <dd><%= note.get('content') %></dd>
-      </dl>
-    </li>
-  <% }) %>
-</ul>
+<ul></ul>
+
+<button>Add note</button>
