@@ -9,7 +9,7 @@ class App.Views.Note extends Backbone.View
     'click .remove-note': 'destroy'
 
   initialize: ->
-      @listenTo(@model, 'invalid error', @markInvalid)
+    @listenTo(@model, 'invalid error', @markInvalid)
 
   markInvalid: ->
     @$el.addClass('invalid')

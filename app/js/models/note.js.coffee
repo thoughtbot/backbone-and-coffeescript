@@ -3,8 +3,8 @@ class App.Models.Note extends Backbone.Model
     unless @hasTitle() || @hasContent()
       "Must provide a title or content"
 
-    hasTitle: ->
-      @has('title') && @get('title').trim() != ''
+  hasTitle: =>
+    @has('title') && @get('title').trim() != ''
 
-    hasContent: ->
-      @has('content') && @get('content').trim() != ''
+  hasContent: =>
+    @has('content') && @get('content').trim() != ''
