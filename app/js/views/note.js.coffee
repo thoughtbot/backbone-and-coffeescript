@@ -1,10 +1,14 @@
 class App.Views.Note extends Backbone.View
   template: JST['app/templates/note.us']
-  tagName: 'form'
+  tagName: 'li'
   className: 'note'
 
   events:
-    'submit': 'saveModel'
+    'change :input': 'saveModel'
+    'click button': 'destroy'
+
+  initialize: ->
+    @listenTo(@model, 'destroy', @remove)
 
   render: ->
     @$el.html(@template(note: @model))
@@ -15,5 +19,6 @@ class App.Views.Note extends Backbone.View
       title: @$('.title').val()
       content: @$('.content').val()
     @model.save()
-    Backbone.history.navigate('/', trigger: true)
-    false
+
+  destroy: ->
+    @model.destroy()

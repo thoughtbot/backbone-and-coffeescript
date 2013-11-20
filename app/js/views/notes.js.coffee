@@ -3,6 +3,9 @@ class App.Views.Notes extends Backbone.View
   events:
     'click button': 'addNote'
 
+  initialize: ->
+    @listenTo(@collection, 'add', @renderNote)
+
   render: ->
     @$el.html(@template())
     @collection.forEach(@renderNote)

@@ -1,2 +1,2 @@
 class App.Collections.Notes extends Backbone.Collection
-  url: 'http://fowa-backbone.herokuapp.com/ude/notes'
+  url: 'http://fowa-backbone.herokuapp.com/chad/notes'
