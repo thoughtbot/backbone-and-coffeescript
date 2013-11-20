@@ -2,7 +2,10 @@ class App.Views.Notes extends Backbone.View
   template: JST['app/templates/notes.us']
 
   events:
-    'click a': 'showNote'
+    'click .add-note': 'addNote'
+
+  initialize: ->
+    @listenTo(@collection, 'add', @renderNote)
 
   render: =>
     @$el.html(@template(notes: @collection))
@@ -17,3 +20,6 @@ class App.Views.Notes extends Backbone.View
   renderNote: (note) =>
     view = new App.Views.Note(model: note)
     @$('ul.notes').append(view.render().el)
+
+  addNote: ->
+    @collection.add({})
