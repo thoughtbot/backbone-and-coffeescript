@@ -20,12 +20,14 @@ module.exports = require(process.env['LINEMAN_MAIN']).config.extend('files', {
       "vendor/js/backbone.js",
       "vendor/js/json_prefilter.js"
     ],
-    app: [
-      "app/js/app.js",
-      "app/js/models/**/*.js",
-      "app/js/collections/**/*.js",
-      "app/js/views/**/*.js",
-      "app/js/router.js"
-    ]
+    coffee: {
+      app: [
+        "app/js/app.js.coffee",
+        "app/js/models/**/*.js.coffee",
+        "app/js/collections/**/*.js.coffee",
+        "app/js/views/**/*.js.coffee",
+        "app/js/router.js.coffee"
+      ]
+    }
   }
 });
