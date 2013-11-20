@@ -8,4 +8,6 @@ class App.Router extends Backbone.Router
     $('body').html(view.render().el)
 
   showNote: (id) ->
-    alert("You requested a note #{id}")
+    note = App.AllNotes.get(id)
+    view = new App.Views.EditNote(model: note)
+    $('body').html(view.render().el)

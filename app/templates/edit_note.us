@@ -1,0 +1,5 @@
+<input type="text" class="title" value="<%= note.get('title') %>" />
+<br />
+<textarea class="content"><%= note.get('content') %></textarea>
+<br />
+<input type="submit" />
