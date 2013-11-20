@@ -5,7 +5,7 @@ window.App =
 
   initialize: ->
     new App.Router()
-    Backbone.history.start()
+    Backbone.history.start(pushState: true)
 
 $ ->
   App.initialize();
