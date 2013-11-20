@@ -1,4 +1,6 @@
 class App.Views.Notes extends Backbone.View
+  template: JST['app/templates/notes.us']
+
   render: =>
-    @$el.html("<h1>Notes</h1>")
+    @$el.html(@template())
     this
