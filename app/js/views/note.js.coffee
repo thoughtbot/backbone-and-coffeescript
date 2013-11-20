@@ -6,6 +6,7 @@ class App.Views.Note extends Backbone.View
 
   events:
     'change :input': 'saveModel'
+    'click .remove-note': 'destroy'
 
   render: =>
     @$el.html(@template(note: @model))
@@ -16,3 +17,7 @@ class App.Views.Note extends Backbone.View
       title: @$('.title').val()
       content: @$('.content').val()
     @model.save()
+
+  destroy: ->
+    @model.destroy()
+    @remove()
