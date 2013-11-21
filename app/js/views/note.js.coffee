@@ -9,20 +9,30 @@ class App.Views.Note extends Backbone.View
 
   initialize: ->
     @listenTo(@model, 'destroy', @remove)
-    @listenTo(@model, 'invalid', @markInvalid)
+    @listenTo(@model, 'invalid error', @markInvalid)
+    @listenTo(@model, 'change', @setInputElements)
 
-  markInvalid: ->
+  markInvalid: =>
     @$el.addClass('invalid')
 
-  render: ->
-    @$el.html(@template(note: @model))
+  markValid: =>
+    @$el.removeClass('invalid')
+
+  render: =>
+    @$el.html(@template())
+    @setInputElements()
     this
+
+  setInputElements: ->
+    @$('.title').val(@model.get('title'))
+    @$('.content').val(@model.get('content'))
 
   saveModel: ->
     @model.set
       title: @$('.title').val()
       content: @$('.content').val()
-    @model.save()
+    if @model.save()
+      @markValid()
 
   destroy: ->
     @model.destroy()

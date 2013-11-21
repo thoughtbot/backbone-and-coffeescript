@@ -1,4 +1,3 @@
-<input type="text" class="title" value="<%= note.get('title') %>"/>
-<br/>
-<textarea class="content"><%= note.get('content') %></textarea>
+<input type="text" class="title"/>
+<textarea class="content"></textarea>
 <button>Remove</button>
